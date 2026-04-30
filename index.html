@@ -1,324 +1,246 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PORTAFOLIO-PABLO HERNÁN JASSO AGUADO</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/mediaqueries.css" />
-  </head>
-  <body>
-    <nav id="desktop-nav" class="fixed-nav">
-      <div class="logo">Pablo Hernán Jasso Aguado</div>
-      <div>
-        <ul class="nav-links">
-          <li><a href="#about">Sobre mí</a></li>
-          <li><a href="#experience">Experiencia</a></li>
-          <li><a href="#projects">Proyectos</a></li>
-          <li><a href="#contact">Contacto</a></li>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pablo Jasso — Desarrollador de Software</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/mediaqueries.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- NAV DESKTOP -->
+  <nav id="desktop-nav">
+    <div class="logo">Pablo Jasso</div>
+    <ul class="nav-links">
+      <li><a href="#about">Sobre mí</a></li>
+      <li><a href="#experience">Habilidades</a></li>
+      <li><a href="#projects">Proyectos</a></li>
+      <li><a href="#contact">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <!-- NAV HAMBURGER -->
+  <nav id="hamburger-nav">
+    <div class="logo">Pablo Jasso</div>
+    <div class="hamburger-menu">
+      <div class="hamburger-icon" id="hamburger-icon">
+        <span></span><span></span><span></span>
+      </div>
+      <ul class="menu-links" id="menu-links">
+        <li><a href="#about"      onclick="closeMenu()">Sobre mí</a></li>
+        <li><a href="#experience" onclick="closeMenu()">Habilidades</a></li>
+        <li><a href="#projects"   onclick="closeMenu()">Proyectos</a></li>
+        <li><a href="#contact"    onclick="closeMenu()">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="profile">
+    <div class="hero-content">
+      <div class="hero-pic">
+        <img src="img/perfil.png" alt="Pablo Jasso" />
+      </div>
+      <div class="hero-text">
+        <span class="hero-greeting">Hola, soy</span>
+        <h1 class="hero-name">Pablo Jasso</h1>
+        <p class="hero-role">Ingeniero en Desarrollo y Gestión de Software</p>
+        <p class="hero-sub">Backend · Cloud · Seguridad · México</p>
+        <div class="btn-container">
+          <button class="btn btn-primary" onclick="window.open('pdf/pablo.pdf')">Descargar CV</button>
+          <button class="btn btn-outline" onclick="location.href='#contact'">Contacto</button>
+        </div>
+        <div class="socials">
+          <a href="https://www.linkedin.com/in/hern%C3%A1n-ja-554993230" target="_blank" aria-label="LinkedIn">
+            <img src="img/linkedin.png" alt="LinkedIn" class="social-icon" />
+          </a>
+          <a href="https://github.com/PABLO-HERNAN-JA/" target="_blank" aria-label="GitHub">
+            <img src="img/github.png" alt="GitHub" class="social-icon" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <p class="section-label">Conóceme</p>
+    <h2 class="section-title">Sobre mí</h2>
+    <div class="about-grid">
+      <div class="about-img">
+        <img src="img/yo.png" alt="Pablo Jasso" />
+      </div>
+      <div class="about-body">
+        <div class="about-cards">
+          <div class="about-card">
+            <img src="img/experience.png" alt="Experiencia" class="card-icon" />
+            <h4>Experiencia</h4>
+            <p>2+ años<br>Desarrollo de Software</p>
+          </div>
+          <div class="about-card">
+            <img src="img/education.png" alt="Estudios" class="card-icon" />
+            <h4>Estudios</h4>
+            <p>Ing. Desarrollo y<br>Gestión de Software<br>UTSJR</p>
+          </div>
+        </div>
+        <p class="about-text">
+          Soy un Ingeniero en Desarrollo de Software con sólida experiencia en gestión de sistemas, bases de datos y soporte empresarial. Me enfoco en construir infraestructura backend robusta, arquitecturas multi-tenant y soluciones en la nube con Cloudflare, Supabase y Firebase. Me apasiona la seguridad de datos, la privacidad y la mejora continua.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="experience">
+    <p class="section-label">Lo que manejo</p>
+    <h2 class="section-title">Habilidades</h2>
+    <div class="skills-grid">
+
+      <div class="skills-card">
+        <h3>Frontend</h3>
+        <ul class="skills-list">
+          <li><span class="skill-dot"></span><span>HTML5</span><span class="skill-level advanced">Avanzado</span></li>
+          <li><span class="skill-dot"></span><span>CSS3</span><span class="skill-level advanced">Avanzado</span></li>
+          <li><span class="skill-dot"></span><span>JavaScript</span><span class="skill-level advanced">Avanzado</span></li>
         </ul>
       </div>
-    </nav>
-    <nav id="hamburger-nav">
-      <div class="logo">Pablo Jasso</div>
-      <div class="hamburger-menu">
-        <div class="hamburger-icon" onclick="toggleMenu()">
-          <span></span>
-          <span></span>
-          <span></span>
+
+      <div class="skills-card">
+        <h3>Backend & Cloud</h3>
+        <ul class="skills-list">
+          <li><span class="skill-dot"></span><span>Node.js</span><span class="skill-level advanced">Avanzado</span></li>
+          <li><span class="skill-dot"></span><span>Cloudflare Workers</span><span class="skill-level advanced">Avanzado</span></li>
+          <li><span class="skill-dot"></span><span>Python</span><span class="skill-level mid">Intermedio</span></li>
+        </ul>
+      </div>
+
+      <div class="skills-card">
+        <h3>Bases de Datos</h3>
+        <ul class="skills-list">
+          <li><span class="skill-dot"></span><span>PostgreSQL / Supabase</span><span class="skill-level advanced">Avanzado</span></li>
+          <li><span class="skill-dot"></span><span>MySQL</span><span class="skill-level advanced">Avanzado</span></li>
+          <li><span class="skill-dot"></span><span>Firebase / Firestore</span><span class="skill-level advanced">Avanzado</span></li>
+        </ul>
+      </div>
+
+      <div class="skills-card">
+        <h3>Herramientas</h3>
+        <ul class="skills-list">
+          <li><span class="skill-dot"></span><span>Git / GitHub</span><span class="skill-level advanced">Avanzado</span></li>
+          <li><span class="skill-dot"></span><span>VS Code</span><span class="skill-level advanced">Avanzado</span></li>
+          <li><span class="skill-dot"></span><span>Xamarin / C#</span><span class="skill-level mid">Intermedio</span></li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <p class="section-label">Lo que he construido</p>
+    <h2 class="section-title">Proyectos</h2>
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <div class="project-img-wrap">
+          <img src="img/wolfer.png" alt="WOLFER" />
         </div>
-        <div class="menu-links">
-          <li><a href="#about" onclick="toggleMenu()">About</a></li>
-          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+        <div class="project-info">
+          <h3>WOLFER</h3>
+          <p>Aplicación web desarrollada con tecnologías modernas.</p>
+          <div class="project-tags"><span>JavaScript</span><span>HTML</span><span>CSS</span></div>
+          <a href="https://github.com/PABLO-HERNAN-JA/wolferfinal.git" target="_blank" class="btn btn-outline btn-sm">Ver en GitHub</a>
         </div>
       </div>
-    </nav>
-<br><br><br><br>
-        <section id="profile">
-      <div class="section__pic-container">
-        <img src="img/perfil.png" alt="John Doe profile picture" />
-      </div>
-      <div class="section__text">
-        <p class="section__text__p1">Hola, yo soy</p>
-        <h1 class="title">Pablo Jasso</h1>
-        <p class="section__text__p2">Desarrollador de Software</p>
-        <div class="btn-container">
-          <button
-            class="btn btn-color-2"
-            onclick="window.open('pdf/pablo.pdf')"
-          >
-            Descargar CV
-          </button>
-          <button class="btn btn-color-1" onclick="location.href='#contact'">
-           Información de contacto
-          </button>
+
+      <div class="project-card">
+        <div class="project-img-wrap">
+          <img src="img/project-2.png" alt="APP DRIVIN" />
         </div>
-        <div id="socials-container">
-          <img
-            src="img/linkedin.png"
-            alt="My LinkedIn profile"
-            class="icon"
-            onclick="location.href='https://www.linkedin.com/in/hern%C3%A1n-ja-554993230'"
-          />
-          <img
-            src="img/github.png"
-            alt="My Github profile"
-            class="icon"
-            onclick="location.href='https://github.com/PABLO-HERNAN-JA/'"
-          />
+        <div class="project-info">
+          <h3>APP DRIVIN</h3>
+          <p>Aplicación de movilidad con flujo completo de viaje y geolocalización en tiempo real.</p>
+          <div class="project-tags"><span>Xamarin</span><span>C#</span><span>Maps API</span></div>
+          <span class="badge-wip">En desarrollo</span>
         </div>
       </div>
-    </section>
-    <section id="about">
-      
-      <h1 class="title">Sobre mí</h1>
-      <div class="section-container">
-        <div class="section__pic-container">
-          <img
-            src="img/yo.png"
-            alt="Profile picture"
-            class="about-pic"
-          />
+
+      <div class="project-card">
+        <div class="project-img-wrap">
+          <img src="img/kiddin.png" alt="KIDDIN PIZZA" />
         </div>
-        <div class="about-details-container">
-          <div class="about-containers">
-            <div class="details-container">
-              <img
-                src="img/experience.png"
-                alt="Experience icon"
-                class="icon"
-              />
-              <h3>Experiencia</h3>
-              <p>2+ años <br />Desarrollador Frontend</p>
-            </div>
-            <div class="details-container">
-              <img
-                src="img/education.png"
-                alt="Education icon"
-                class="icon"
-              />
-              <h3>Estudios</h3>
-              <p>UTSJR<br />
-            </div>
-          </div>
-          <div class="text-container">
-            <p>
-              Soy un desarrollador de software con una pasión innata por la innovación y la tecnología. Desde temprana edad, mostró un gran interés por la informática y la programación, lo que la llevó a perseguir una carrera en el mundo de la tecnología. 
-              Mi deseo es innovar me motiva a explorar constantemente nuevas tecnologías y enfoques en esta area. 
-            </p>
-          </div>
+        <div class="project-info">
+          <h3>KIDDIN PIZZA</h3>
+          <p>Sistema de pedidos y gestión para restaurante con panel de administración.</p>
+          <div class="project-tags"><span>JavaScript</span><span>Firebase</span><span>CSS3</span></div>
+          <span class="badge-wip">En desarrollo</span>
         </div>
       </div>
-      
-    </section>
-    <section id="experience">
-      <p class="section__text__p1">Explorar sobre mí</p>
-      <h1 class="title">Experiencia</h1>
-      <div class="experience-details-container">
-        <div class="about-containers">
-          <div class="details-container">
-            <h2 class="experience-sub-title">Frontend Development</h2>
-            <div class="article-container">
-              <article>
-                <img
-                  src="img/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>HTML</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="img/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>CSS</h3>
-                  <p>Experiencia</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="img/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>PHP</h3>
-                  <p>Intermedio</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="img/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>JavaScript</h3>
-                  <p>Basic</p>
-                </div>
-              </article>
-              
-             
-            </div>
-          </div>
-          <div class="details-container">
-            <h2 class="experience-sub-title">Frontend Development</h2>
-            <div class="article-container">
-              <article>
-                <img
-                  src="img/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>PostgreSQL</h3>
-                  <p>Basico</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="img/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Node JS</h3>
-                  <p>Principiante</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="img/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>JS</h3>
-                  <p>Intermedio</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="img/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Git</h3>
-                  <p>Intermedio</p>
-                </div>
-              </article>
-            </div>
-          </div>
+
+      <div class="project-card">
+        <div class="project-img-wrap project-img-placeholder">
+          <span>impablo</span>
+        </div>
+        <div class="project-info">
+          <h3>impablo</h3>
+          <p>Plataforma SaaS multi-tenant con autenticación, RBAC y gestión completa de cuentas.</p>
+          <div class="project-tags"><span>Supabase</span><span>Node.js</span><span>PostgreSQL</span></div>
+          <span class="badge-wip">En desarrollo</span>
         </div>
       </div>
-      
-    </section>
-    <section id="projects">
-      <p class="section__text__p1"></p>
-      <h1 class="title">Mis proyectos</h1>
-      <div class="experience-details-container">
-        <div class="about-containers">
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="img/wolfer.png"
-                alt="Project 1"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">WOLFER</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/PABLO-HERNAN-JA/wolferfinal.git'"
-              >
-                Github
-              </button>
-              
-            </div>
-          </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="img/project-2.png"
-                alt="Project 2"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">APP DRIVIN</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href=''"
-              >
-                En proceso
-              </button>
-              
-            </div>
-          </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="img/kiddin.png"
-                alt="Project 3"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">KIDDIN PIZZA</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href=''"
-              >
-                En proceso
-              </button>
-             
-            </div>
-          </div>
+
+      <div class="project-card">
+        <div class="project-img-wrap project-img-placeholder">
+          <span>Barbershop</span>
+        </div>
+        <div class="project-info">
+          <h3>Barbershop Booking</h3>
+          <p>Sistema de reservas con portal para dueño, portal de clientes y gestión de citas.</p>
+          <div class="project-tags"><span>Firebase</span><span>JavaScript</span><span>CSS3</span></div>
+          <span class="badge-wip">En desarrollo</span>
         </div>
       </div>
-      
-    </section>
-    <section id="contact">
-      <p class="section__text__p1"></p>
-      <h1 class="title">Contactame</h1>
-      <div class="contact-info-upper-container">
-        <div class="contact-info-container">
-          <img
-            src="img/email.png"
-            alt="Email icon"
-            class="icon contact-icon email-icon"
-          />
-          <p><a href="mailto:pablojasso058@gmail.com">pablojasso058@gmail.com</a></p>
+
+      <div class="project-card">
+        <div class="project-img-wrap project-img-placeholder">
+          <span>HR</span>
         </div>
-        <div class="contact-info-container">
-          <img
-            src="img/linkedin.png"
-            alt="LinkedIn icon"
-            class="icon contact-icon"
-          />
-          <p><a href="//www.linkedin.com/in/hern%C3%A1n-ja-554993230">LinkedIn</a></p>
+        <div class="project-info">
+          <h3>HR Employee System</h3>
+          <p>Gestión de empleados, asistencia, aniversarios y organización departamental.</p>
+          <div class="project-tags"><span>MySQL</span><span>JavaScript</span><span>HTML5</span></div>
+          <span class="badge-wip">En desarrollo</span>
         </div>
       </div>
-    </section>
-    <footer>
-      <nav>
-        <div class="nav-links-container">
-          
-        </div>
-      </nav>
-      <p>Copyright &#169; 2023 Pablo Hernán Jasso Aguado Todos los derechos reservados.</p>
-    </footer>
-    <script src="js/script.js"></script>
-  </body>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <p class="section-label">Hablemos</p>
+    <h2 class="section-title">Contacto</h2>
+    <div class="contact-box">
+      <a href="mailto:pablojasso058@gmail.com" class="contact-item">
+        <img src="img/email.png" alt="Email" class="contact-icon" />
+        <span>pablojasso058@gmail.com</span>
+      </a>
+      <a href="https://www.linkedin.com/in/hern%C3%A1n-ja-554993230" target="_blank" class="contact-item">
+        <img src="img/linkedin.png" alt="LinkedIn" class="contact-icon" />
+        <span>LinkedIn</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Pablo Hernán Jasso Aguado — Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
 </html>
