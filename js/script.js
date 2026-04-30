@@ -1,19 +1,54 @@
-function toggleMenu() {
-  const menu = document.querySelector(".menu-links");
-  const icon = document.querySelector(".hamburger-icon");
-  menu.classList.toggle("open");
-  icon.classList.toggle("open");
+// ── Hamburger menu ──────────────────────────────────────
+const hamburgerIcon = document.getElementById("hamburger-icon");
+const menuLinks     = document.getElementById("menu-links");
+
+hamburgerIcon.addEventListener("click", () => {
+  hamburgerIcon.classList.toggle("open");
+  menuLinks.classList.toggle("open");
+});
+
+function closeMenu() {
+  hamburgerIcon.classList.remove("open");
+  menuLinks.classList.remove("open");
 }
 
-function toggleMenu() {
-  var desktopNav = document.getElementById('desktop-nav');
+// ── Active nav link on scroll ─────────────────────────────
+const sections = document.querySelectorAll("section[id]");
+const navLinks  = document.querySelectorAll(".nav-links a, .menu-links a");
 
-  if (desktopNav.classList.contains('show-nav')) {
-    desktopNav.classList.remove('show-nav');
-  } else {
-    desktopNav.classList.add('show-nav');
-  }
-}
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      navLinks.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === "#" + entry.target.id) {
+          link.classList.add("active");
+        }
+      });
+    }
+  });
+}, { threshold: 0.35 });
 
-// Llama a la función cuando se hace clic en el icono del menú
-document.querySelector('.hamburger-icon').addEventListener('click', toggleMenu);
+sections.forEach(s => observer.observe(s));
+
+// ── Scroll-reveal ─────────────────────────────────────────
+const revealEls = document.querySelectorAll(
+  ".project-card, .skills-card, .about-card, .contact-item"
+);
+
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(el => {
+    if (el.isIntersecting) {
+      el.target.style.opacity    = "1";
+      el.target.style.transform  = "translateY(0)";
+      revealObserver.unobserve(el.target);
+    }
+  });
+}, { threshold: 0.1 });
+
+revealEls.forEach(el => {
+  el.style.opacity   = "0";
+  el.style.transform = "translateY(20px)";
+  el.style.transition = "opacity .5s ease, transform .5s ease";
+  revealObserver.observe(el);
+});
