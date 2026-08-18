@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Pablo Jasso — Ingeniero en Desarrollo de Software especializado en backend, infraestructura cloud y seguridad de datos." />
   <title>Pablo Jasso — Desarrollador de Software</title>
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/mediaqueries.css" />
@@ -18,6 +19,7 @@
     <ul class="nav-links">
       <li><a href="#about">Sobre mí</a></li>
       <li><a href="#experience">Habilidades</a></li>
+      <li><a href="#certifications">Certificados</a></li>
       <li><a href="#projects">Proyectos</a></li>
       <li><a href="#contact">Contacto</a></li>
     </ul>
@@ -33,6 +35,7 @@
       <ul class="menu-links" id="menu-links">
         <li><a href="#about"      onclick="closeMenu()">Sobre mí</a></li>
         <li><a href="#experience" onclick="closeMenu()">Habilidades</a></li>
+        <li><a href="#certifications" onclick="closeMenu()">Certificados</a></li>
         <li><a href="#projects"   onclick="closeMenu()">Proyectos</a></li>
         <li><a href="#contact"    onclick="closeMenu()">Contacto</a></li>
       </ul>
@@ -51,8 +54,8 @@
         <p class="hero-role">Ingeniero en Desarrollo y Gestión de Software</p>
         <p class="hero-sub">Backend · Cloud · Seguridad · México</p>
         <div class="btn-container">
-          <button class="btn btn-primary" onclick="window.open('pdf/pablo.pdf')">Descargar CV</button>
-          <button class="btn btn-outline" onclick="location.href='#contact'">Contacto</button>
+          <a href="pdf/pablo.pdf" target="_blank" class="btn btn-primary">Descargar CV</a>
+          <a href="#contact" class="btn btn-outline">Contacto</a>
         </div>
         <div class="socials">
           <a href="https://www.linkedin.com/in/hern%C3%A1n-ja-554993230" target="_blank" aria-label="LinkedIn">
@@ -77,12 +80,16 @@
       <div class="about-body">
         <div class="about-cards">
           <div class="about-card">
-            <img src="img/experience.png" alt="Experiencia" class="card-icon" />
+            <span class="card-icon-wrap">
+              <img src="img/experience.png" alt="Experiencia" class="card-icon" />
+            </span>
             <h4>Experiencia</h4>
             <p>2+ años<br>Desarrollo de Software</p>
           </div>
           <div class="about-card">
-            <img src="img/education.png" alt="Estudios" class="card-icon" />
+            <span class="card-icon-wrap">
+              <img src="img/education.png" alt="Estudios" class="card-icon" />
+            </span>
             <h4>Estudios</h4>
             <p>Ing. Desarrollo y<br>Gestión de Software<br>UTSJR</p>
           </div>
@@ -134,6 +141,47 @@
           <li><span class="skill-dot"></span><span>VS Code</span><span class="skill-level advanced">Avanzado</span></li>
           <li><span class="skill-dot"></span><span>Xamarin / C#</span><span class="skill-level mid">Intermedio</span></li>
         </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CERTIFICADOS -->
+  <section id="certifications">
+    <p class="section-label">Formación continua</p>
+    <h2 class="section-title">Certificados</h2>
+    <div class="projects-grid">
+
+      <!-- Certificado: Foundations of Cybersecurity -->
+      <div class="cert-card">
+        <div class="cert-img-wrap">
+          <img src="https://i.ibb.co/zWqCVXJ4/certificado-2.jpg" alt="Certificado Foundations of Cybersecurity" />
+        </div>
+        <div class="cert-info">
+          <h3>Foundations of Cybersecurity</h3>
+          <p>Conceptos fundamentales de seguridad de la información, marco NIST, triada CIA y análisis de amenazas.</p>
+          <div class="project-tags">
+            <span>Google</span>
+            <span>Coursera</span>
+          </div>
+          <a href="https://www.coursera.org/account/accomplishments/verify/67BO6X9MRREP" target="_blank" class="btn btn-outline btn-sm">Ver certificado</a>
+        </div>
+      </div>
+
+      <!-- Certificado: Play It Safe -->
+      <div class="cert-card">
+        <div class="cert-img-wrap">
+          <img src="https://i.ibb.co/sprVhFcz/certificado-1.jpg" alt="Certificado Play It Safe: Manage Security Risks" />
+        </div>
+        <div class="cert-info">
+          <h3>Play It Safe: Manage Security Risks</h3>
+          <p>Curso especializado en la gestión de riesgos de seguridad cibernética, completado en julio 2026.</p>
+          <div class="project-tags">
+            <span>Google</span>
+            <span>Coursera</span>
+          </div>
+          <a href="https://coursera.org/share/ad058db65bf6a7fa028c4600de1af197" target="_blank" class="btn btn-outline btn-sm">Ver certificado</a>
+        </div>
       </div>
 
     </div>
@@ -226,11 +274,15 @@
     <h2 class="section-title">Contacto</h2>
     <div class="contact-box">
       <a href="mailto:pablojasso058@gmail.com" class="contact-item">
-        <img src="img/email.png" alt="Email" class="contact-icon" />
+        <span class="contact-icon-wrap">
+          <img src="img/email.png" alt="Email" class="contact-icon" />
+        </span>
         <span>pablojasso058@gmail.com</span>
       </a>
       <a href="https://www.linkedin.com/in/hern%C3%A1n-ja-554993230" target="_blank" class="contact-item">
-        <img src="img/linkedin.png" alt="LinkedIn" class="contact-icon" />
+        <span class="contact-icon-wrap">
+          <img src="img/linkedin.png" alt="LinkedIn" class="contact-icon" />
+        </span>
         <span>LinkedIn</span>
       </a>
     </div>
@@ -238,7 +290,7 @@
 
   <!-- FOOTER -->
   <footer>
-    <p>© 2025 Pablo Hernán Jasso Aguado — Todos los derechos reservados.</p>
+    <p>© 2026 Pablo Hernán Jasso Aguado — Todos los derechos reservados.</p>
   </footer>
 
   <script src="js/script.js"></script>
