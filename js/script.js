@@ -31,9 +31,52 @@ const observer = new IntersectionObserver((entries) => {
 
 sections.forEach(s => observer.observe(s));
 
+// ── Smart navbar: se oculta al bajar, aparece al subir ────
+const desktopNav   = document.getElementById("desktop-nav");
+const hamburgerNav = document.getElementById("hamburger-nav");
+const navBars      = [desktopNav, hamburgerNav];
+
+let lastScrollY   = window.scrollY;
+let ticking       = false;
+const HIDE_AFTER  = 80; // px antes de empezar a ocultar
+
+function updateNavOnScroll() {
+  const currentY = window.scrollY;
+
+  navBars.forEach(bar => {
+    if (!bar) return;
+
+    // Fondo más sólido una vez que hay scroll
+    bar.classList.toggle("nav-scrolled", currentY > 10);
+
+    if (currentY <= HIDE_AFTER) {
+      // Siempre visible cerca del tope de la página
+      bar.classList.remove("nav-hidden");
+    } else if (currentY > lastScrollY) {
+      // Bajando → ocultar
+      bar.classList.add("nav-hidden");
+      // Si el menú hamburguesa estaba abierto, cerrarlo al ocultar la barra
+      closeMenu();
+    } else {
+      // Subiendo → mostrar
+      bar.classList.remove("nav-hidden");
+    }
+  });
+
+  lastScrollY = currentY;
+  ticking = false;
+}
+
+window.addEventListener("scroll", () => {
+  if (!ticking) {
+    requestAnimationFrame(updateNavOnScroll);
+    ticking = true;
+  }
+});
+
 // ── Scroll-reveal ─────────────────────────────────────────
 const revealEls = document.querySelectorAll(
-  ".project-card, .skills-card, .about-card, .contact-item"
+  ".project-card, .cert-card, .skills-card, .about-card, .contact-item"
 );
 
 const revealObserver = new IntersectionObserver((entries) => {
