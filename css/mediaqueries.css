@@ -9,11 +9,27 @@
   .skills-grid { grid-template-columns: 1fr 1fr; }
 }
 
+
 /* ── MOBILE NAV ── */
 @media screen and (max-width: 900px) {
   #desktop-nav  { display: none; }
   #hamburger-nav { display: flex; }
 }
+
+
+/* ── SMALL TABLET ── */
+@media screen and (max-width: 768px) {
+  .cert-card { flex-direction: column; }
+  .cert-img-wrap { 
+    border-bottom: none; 
+    border-right: 1px solid var(--border);
+    padding: 1.5rem;
+  }
+  .cert-img-wrap img { max-height: 140px; }
+  section { padding: calc(var(--nav-h) + 4rem) 6% 4rem; }
+  .about-cards { grid-template-columns: 1fr 1fr; }
+}
+
 
 /* ── MOBILE ── */
 @media screen and (max-width: 600px) {
@@ -28,7 +44,10 @@
   .section-title { font-size: 1.8rem; }
 }
 
+
 @media screen and (max-width: 400px) {
   .about-cards { grid-template-columns: 1fr; }
   .btn { width: 100%; justify-content: center; }
+  .hero-sub { font-size: .8rem; }
+  .nav-links { gap: 1.5rem; }
 }
