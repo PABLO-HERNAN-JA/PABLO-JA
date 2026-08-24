@@ -13,6 +13,7 @@ a { text-decoration: none; color: inherit; transition: color .2s; }
 p { color: #8b949e; }
 img { display: block; max-width: 100%; }
 
+
 /* ── CSS VARIABLES ── */
 :root {
   --accent:       #01969e;
@@ -25,6 +26,44 @@ img { display: block; max-width: 100%; }
   --radius-lg:    20px;
   --nav-h:        70px;
 }
+
+
+/* ── ACCESSIBILITY ── */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+
+/* ── REDUCED MOTION ── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  #profile::before,
+  #profile::after {
+    display: none;
+  }
+}
+
 
 /* ── NAV ── */
 nav {
@@ -43,6 +82,7 @@ nav {
   transition: transform .4s cubic-bezier(.4,0,.2,1), background .3s ease;
 }
 
+
 /* Oculta la barra al hacer scroll hacia abajo, reaparece al subir */
 nav.nav-hidden {
   transform: translateY(-100%);
@@ -50,6 +90,7 @@ nav.nav-hidden {
 nav.nav-scrolled {
   background: rgba(13, 17, 23, .92);
 }
+
 
 .logo {
   font-family: "Fira Code", monospace;
@@ -59,13 +100,16 @@ nav.nav-scrolled {
   letter-spacing: -.01em;
 }
 
+
 #hamburger-nav { display: none; }
+
 
 .nav-links {
   display: flex;
   gap: 2.5rem;
   list-style: none;
 }
+
 
 .nav-links a {
   position: relative;
@@ -96,6 +140,7 @@ nav.nav-scrolled {
 }
 .nav-links a.active::before { width: 100%; }
 
+
 /* ── HAMBURGER ── */
 .hamburger-icon {
   display: flex;
@@ -114,6 +159,7 @@ nav.nav-scrolled {
 .hamburger-icon.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 .hamburger-icon.open span:nth-child(2) { opacity: 0; }
 .hamburger-icon.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
 
 .menu-links {
   position: absolute;
@@ -143,11 +189,13 @@ nav.nav-scrolled {
 .menu-links li a:hover { opacity: 1; background: rgba(255,255,255,.04); border-left-color: var(--accent); }
 .menu-links li a.active { opacity: 1; color: var(--accent); border-left-color: var(--accent); }
 
+
 /* ── SECTIONS ── */
 section {
   padding: calc(var(--nav-h) + 5rem) 8% 5rem;
   min-height: 100vh;
 }
+
 
 .section-label {
   font-family: "Fira Code", monospace;
@@ -158,12 +206,14 @@ section {
   margin-bottom: .5rem;
 }
 
+
 .section-title {
   font-size: clamp(1.8rem, 4vw, 2.8rem);
   font-weight: 700;
   color: var(--text);
   margin-bottom: 3rem;
 }
+
 
 /* ── HERO ── */
 #profile {
@@ -177,17 +227,18 @@ section {
   isolation: isolate;
 }
 
+
 #profile::before {
   content: "";
   position: absolute;
   inset: 0;
   z-index: -2;
   background:
-    radial-gradient(circle at 20% 25%, rgba(1,150,158,.35), transparent 55%),
-    radial-gradient(circle at 85% 75%, rgba(1,150,158,.28), transparent 50%),
-    radial-gradient(circle at 50% 100%, rgba(91,110,225,.18), transparent 60%);
+    radial-gradient(circle at 20% 25%, rgba(1,150,158,.25), transparent 55%),
+    radial-gradient(circle at 85% 75%, rgba(1,150,158,.18), transparent 50%);
   filter: blur(10px);
 }
+
 
 #profile::after {
   content: "";
@@ -202,6 +253,7 @@ section {
   mask-image: radial-gradient(circle at center, black 45%, transparent 85%);
 }
 
+
 .hero-content {
   display: flex;
   align-items: center;
@@ -209,6 +261,7 @@ section {
   max-width: 1000px;
   width: 100%;
 }
+
 
 .hero-pic {
   flex-shrink: 0;
@@ -220,7 +273,9 @@ section {
 }
 .hero-pic img { width: 100%; height: 100%; object-fit: cover; }
 
+
 .hero-text { flex: 1; }
+
 
 .hero-greeting {
   font-family: "Fira Code", monospace;
@@ -228,6 +283,7 @@ section {
   color: var(--accent);
   letter-spacing: .05em;
 }
+
 
 .hero-name {
   font-size: clamp(2.4rem, 5vw, 3.8rem);
@@ -237,12 +293,14 @@ section {
   margin: .4rem 0 .6rem;
 }
 
+
 .hero-role {
   font-size: 1.15rem;
   font-weight: 500;
   color: var(--muted);
   margin-bottom: .3rem;
 }
+
 
 .hero-sub {
   font-size: .9rem;
@@ -251,7 +309,9 @@ section {
   font-family: "Fira Code", monospace;
 }
 
+
 .btn-container { display: flex; gap: 1rem; flex-wrap: wrap; }
+
 
 .btn {
   display: inline-flex;
@@ -267,11 +327,13 @@ section {
   font-family: inherit;
 }
 
+
 .btn-primary {
   background: var(--accent);
   color: #fff;
 }
 .btn-primary:hover { background: #01b4bd; transform: translateY(-1px); }
+
 
 .btn-outline {
   background: transparent;
@@ -286,6 +348,7 @@ section {
 }
 
 .btn-sm { padding: .4rem 1rem; font-size: .8rem; }
+
 
 /* ── SOCIAL ICONS (hero) ── */
 .socials {
@@ -316,8 +379,10 @@ section {
   opacity: .9;
 }
 
+
 /* ── ABOUT ── */
 #about { background: var(--canvas); position: relative; }
+
 
 .about-grid {
   display: grid;
@@ -326,12 +391,14 @@ section {
   align-items: start;
 }
 
+
 .about-img {
   border-radius: var(--radius-lg);
   overflow: hidden;
   border: 1px solid var(--border);
 }
 .about-img img { width: 100%; }
+
 
 .about-cards {
   display: grid;
@@ -340,6 +407,7 @@ section {
   margin-bottom: 1.5rem;
 }
 
+
 .about-card {
   background: #0d1117;
   border: 1px solid var(--border);
@@ -347,10 +415,15 @@ section {
   padding: 1.25rem;
   text-align: center;
   transition: border-color .2s;
+  will-change: transform, border-color;
 }
-.about-card:hover { border-color: var(--accent); }
+.about-card:hover { 
+  border-color: var(--accent);
+  will-change: auto;
+}
 .about-card h4 { font-size: .9rem; font-weight: 600; color: var(--text); margin: .5rem 0 .3rem; }
 .about-card p { font-size: .8rem; color: var(--muted); }
+
 
 .card-icon-wrap {
   width: 44px;
@@ -365,6 +438,7 @@ section {
 }
 .about-card:hover .card-icon-wrap { background: var(--accent); }
 
+
 .card-icon {
   width: 22px;
   height: 22px;
@@ -372,11 +446,13 @@ section {
   opacity: .95;
 }
 
+
 .about-text {
   color: var(--muted);
   font-size: .95rem;
   line-height: 1.75;
 }
+
 
 /* ── SKILLS ── */
 .skills-grid {
@@ -385,14 +461,19 @@ section {
   gap: 1.5rem;
 }
 
+
 .skills-card {
   background: var(--canvas);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 1.75rem;
   transition: border-color .2s;
+  will-change: transform, border-color;
 }
-.skills-card:hover { border-color: var(--accent); }
+.skills-card:hover { 
+  border-color: var(--accent);
+  will-change: auto;
+}
 .skills-card h3 {
   font-size: .85rem;
   font-weight: 600;
@@ -403,6 +484,7 @@ section {
   font-family: "Fira Code", monospace;
 }
 
+
 .skills-list { list-style: none; display: flex; flex-direction: column; gap: .75rem; }
 .skills-list li {
   display: flex;
@@ -412,12 +494,14 @@ section {
   color: var(--text);
 }
 
+
 .skill-dot {
   width: 6px; height: 6px;
   border-radius: 50%;
   background: var(--accent);
   flex-shrink: 0;
 }
+
 
 .skill-level {
   margin-left: auto;
@@ -430,8 +514,10 @@ section {
 .skill-level.advanced { background: rgba(1,150,158,.15); color: var(--accent); }
 .skill-level.mid { background: rgba(240,136,62,.12); color: #f0883e; }
 
+
 /* ── PROJECTS ── */
 #projects { background: var(--canvas); }
+
 
 .projects-grid {
   display: grid;
@@ -439,14 +525,21 @@ section {
   gap: 1.5rem;
 }
 
+
 .project-card {
   background: #0d1117;
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   overflow: hidden;
   transition: border-color .2s, transform .2s;
+  will-change: transform, border-color;
 }
-.project-card:hover { border-color: var(--accent); transform: translateY(-4px); }
+.project-card:hover { 
+  border-color: var(--accent); 
+  transform: translateY(-4px);
+  will-change: auto;
+}
+
 
 .project-img-wrap {
   height: 180px;
@@ -459,6 +552,7 @@ section {
   transition: transform .3s;
 }
 .project-card:hover .project-img-wrap img { transform: scale(1.04); }
+
 
 .project-img-placeholder {
   display: flex;
@@ -474,6 +568,7 @@ section {
   opacity: .5;
 }
 
+
 .project-info { padding: 1.25rem; }
 .project-info h3 {
   font-size: 1rem;
@@ -482,6 +577,7 @@ section {
   margin-bottom: .4rem;
 }
 .project-info p { font-size: .82rem; margin-bottom: .75rem; }
+
 
 .project-tags {
   display: flex;
@@ -499,6 +595,7 @@ section {
   padding: 2px 8px;
 }
 
+
 .badge-wip {
   display: inline-block;
   font-size: .72rem;
@@ -510,6 +607,7 @@ section {
   padding: 2px 8px;
 }
 
+
 /* ── CERTIFICADOS ── */
 .cert-card {
   background: #0d1117;
@@ -519,11 +617,14 @@ section {
   transition: border-color .2s, transform .2s;
   display: flex;
   flex-direction: column;
+  will-change: transform, border-color;
 }
 .cert-card:hover {
   border-color: var(--accent);
   transform: translateY(-4px);
+  will-change: auto;
 }
+
 
 .cert-img-wrap {
   display: flex;
@@ -541,6 +642,7 @@ section {
   transition: transform .3s ease;
 }
 .cert-card:hover .cert-img-wrap img { transform: scale(1.06); }
+
 
 .cert-info {
   padding: 1.25rem;
@@ -573,6 +675,7 @@ section {
   color: #fff;
 }
 
+
 /* ── CONTACT ── */
 #contact {
   display: flex;
@@ -584,6 +687,7 @@ section {
 }
 #contact .section-label, #contact .section-title { text-align: center; }
 
+
 .contact-box {
   display: flex;
   gap: 1.5rem;
@@ -591,6 +695,7 @@ section {
   justify-content: center;
   margin-top: 1rem;
 }
+
 
 .contact-item {
   display: flex;
@@ -604,8 +709,14 @@ section {
   color: var(--text);
   font-weight: 500;
   transition: border-color .2s, transform .2s;
+  will-change: transform, border-color;
 }
-.contact-item:hover { border-color: var(--accent); transform: translateY(-2px); }
+.contact-item:hover { 
+  border-color: var(--accent); 
+  transform: translateY(-2px);
+  will-change: auto;
+}
+
 
 .contact-icon-wrap {
   width: 46px;
@@ -620,12 +731,14 @@ section {
 }
 .contact-item:hover .contact-icon-wrap { background: var(--accent); }
 
+
 .contact-icon {
   width: 24px;
   height: 24px;
   filter: brightness(0) invert(1);
   opacity: .95;
 }
+
 
 /* ── FOOTER ── */
 footer {
@@ -635,3 +748,20 @@ footer {
   padding: 2rem;
 }
 footer p { font-size: .82rem; color: var(--muted); }
+
+
+/* ── PRINT STYLES ── */
+@media print {
+  nav, .socials, .btn, footer, .hamburger-menu { display: none; }
+  body { background: #fff; color: #000; }
+  section { min-height: auto; padding: 2rem 0; }
+  
+  .project-card, .cert-card, .skills-card, .about-card {
+    break-inside: avoid;
+    border: 1px solid #000;
+    background: #fff;
+  }
+  
+  a { color: #000; text-decoration: underline; }
+  .section-label, .section-title, p, h3, h4 { color: #000; }
+}
